@@ -8,7 +8,6 @@ import {
   ImageBackground,
   TouchableOpacity,
 } from 'react-native';
-
 import styles from "./styles";
 
 export default function Home() {
@@ -26,17 +25,27 @@ export default function Home() {
                 source={require("../../assets/logo.png")}
               />
             <View style={styles.inputContainer}>
+              <Image 
+                  source={require("../../assets/lupaBuscar.png")}
+                  style={styles.searchIcon}
+                /> 
               <TextInput 
                 style={styles.input}
                 placeholder="Buscar invocador"
                 placeholderTextColor="#CDBE91"
               />
-            <TouchableOpacity style={styles.button}>
-              <Text style={styles.buttonText}>
-                {">"}
-              </Text>
-            </TouchableOpacity>
+
+              <TouchableOpacity style={styles.button}>
+                <Text style={styles.buttonText}>
+                  {">"}
+                </Text>
+              </TouchableOpacity>
             </View>
+
+            <View style={{flex:1}}>
+              <Text style={styles.copyRight}>Copyright © 2020 OS PICAS company</Text>
+            </View>
+
             </ImageBackground>
             </View>
         </>

@@ -38,6 +38,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
     marginTop: 28,
     marginBottom: 92,
+    marginRight:60
   },
   summonerIcon: {
     height: 95,
@@ -56,7 +57,33 @@ const styles = StyleSheet.create({
     fontSize: 10,
     position: "absolute",
     top: 92,
-  }
+  },
+  perfilContainer:{
+    flexDirection:"row",
+    padding:10,
+    justifyContent: "center",
+    alignItems: "center",
+    top:200
+  },
+  perfil:{
+    color: "#E8BC2B",
+    fontWeight: "bold",
+    fontSize:20,
+  },
+  partidas:{
+    color: "#E8BC2B",
+    fontWeight: "bold",
+    marginLeft:70,
+    fontSize:20,
+  },
+  buttonText: {
+    color: "#E8BC2B",
+    fontSize: 34,
+    textAlign: "center",
+    marginTop: 23,
+    marginBottom: 92,
+    marginRight:50,
+  },
   });
   
 export default styles;

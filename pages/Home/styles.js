@@ -11,6 +11,7 @@ const styles = StyleSheet.create({
     marginTop: 85,
     marginHorizontal: 20,
     flexDirection: "row",
+    alignItems:"center",
   },
   logo: {
     marginTop: 40,
@@ -27,14 +28,14 @@ const styles = StyleSheet.create({
     color: "white",
     fontSize: 20,
     marginRight: 20,
-    textAlign: "left",
-    paddingLeft: 15,
+    paddingLeft: 35,
     color: "#CDBE91",
     backgroundColor: "#010101",
     borderWidth: 1,
     borderColor: "#785A28",
   },
   button: {
+    marginRight: -10,
     backgroundColor: "#010101",
     width: 50,
     height: 50,
@@ -47,6 +48,18 @@ const styles = StyleSheet.create({
     fontSize: 34,
     textAlign: "center",
   },
+ searchIcon:{
+   marginRight:-33,
+   zIndex:1
+ },
+ copyRight:{
+    alignSelf: "center",
+    bottom: 10,
+    textTransform: "uppercase",
+    color: "#fff",
+    position:"absolute",
+    fontWeight:"bold"
+  }
 });
   
 export default styles;

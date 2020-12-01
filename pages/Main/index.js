@@ -5,6 +5,7 @@ import {
   StatusBar,
   Image,
   ImageBackground,
+  TouchableOpacity,
 } from 'react-native';
 
 import styles from "./styles";
@@ -29,9 +30,17 @@ export default function Main() {
               source={require("../../assets/bgImage.png")}>
             </ImageBackground>
             <View style={styles.flag}>
-              <Text style={styles.summonerName}>
-                Caitando Sucata
-              </Text>
+              <View style={{flexDirection:"row"}}>
+                <TouchableOpacity>
+                <Text style={styles.buttonText}>
+                    {"<"}
+                </Text>
+                </TouchableOpacity>
+                <Text style={styles.summonerName}>
+                  Caitando Sucata
+                </Text>
+              </View>
+              
               <ImageBackground
                 style={styles.summonerIcon}
                 imageStyle={{ borderRadius: 50 }}
@@ -45,6 +54,17 @@ export default function Main() {
                 69
               </Text>
               </ImageBackground>                    
+            </View>
+            <View>
+              <View style={styles.perfilContainer}>
+                <TouchableOpacity>
+                  <Text style={styles.perfil}>PERFIL</Text>
+                </TouchableOpacity>
+                
+                <TouchableOpacity>
+                  <Text style={styles.partidas}>PARTIDAS</Text>
+                </TouchableOpacity>
+              </View>
             </View>
           </View>
         </View>
