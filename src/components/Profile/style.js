@@ -6,6 +6,7 @@ const styles = StyleSheet.create({
         fontFamily:"Asul-Regular",
         fontSize:20,
         textAlign:"center",
+        width: 115,
       },
       profileContainer:{
         paddingVertical:3,
@@ -16,10 +17,13 @@ const styles = StyleSheet.create({
         color: "#fff",
         fontFamily: "Asul-Regular",
         fontSize:16,
+        textAlign: "center",
+        width: 115,
       },
       eloImage:{
         flexDirection:"row", 
-        justifyContent: "space-evenly"
+        justifyContent: "center",
+        width: 400,
       }
 })
 
