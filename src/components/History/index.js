@@ -1,9 +1,13 @@
 import React from "react";
-import { Text, Image, View, ScrollView } from "react-native";
+import { Text, View, ScrollView } from "react-native";
 import styles from "./style.js";
 import CardHistory from "../cardHistory/"
 
 export default function History() {
+
+    function handleScroll() {
+
+    }
 
     return (
         <>
@@ -15,12 +19,20 @@ export default function History() {
             <View style={{padding:5}}>
                 <View style={styles.loss}>
                     <View style={styles.win}>
-                        <Text style={{color:"#1BA9BD", fontSize:1}}>a</Text>
+                        <Text style={{color:"#1BA9BD", fontSize:1}}>{""}</Text>
                     </View>
                 </View>
             </View>
 
-            <ScrollView>
+            <ScrollView onScroll={handleScroll}>
+                <CardHistory/>
+                <CardHistory/>
+                <CardHistory/>
+                <CardHistory/>
+                <CardHistory/>
+                <CardHistory/>
+                <CardHistory/>
+                <CardHistory/>
                 <CardHistory/>
                 <CardHistory/>
                 <CardHistory/>

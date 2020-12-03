@@ -1,6 +1,6 @@
 import { StyleSheet, Dimensions } from "react-native";
 
-const large = Dimensions.get("screen").width
+const large = Dimensions.get("screen").width;
 
 const styles = StyleSheet.create({
     cardChamp:{

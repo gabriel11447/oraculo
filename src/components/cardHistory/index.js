@@ -1,6 +1,5 @@
 import React from "react";
 import { Text, Image, View } from "react-native";
-import { FlatList, ScrollView } from "react-native-gesture-handler";
 import styles from "./style.js";
 
 export default function CardHistory() {
