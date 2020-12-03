@@ -18,10 +18,8 @@ const styles = StyleSheet.create({
     alignSelf: "center",
   },
   bgImage: {
-    flex: 1,
     zIndex: -1,
-    height: Dimensions.get('screen').height,
-    width: Dimensions.get('screen').width,
+    position: "absolute",
   },
   input: {
     fontFamily:"Asul-Regular",

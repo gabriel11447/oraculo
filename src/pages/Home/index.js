@@ -7,9 +7,13 @@ import {
   Image,
   ImageBackground,
   TouchableOpacity,
+  Dimensions,
 } from 'react-native';
-import styles from "./styles";
 import { useNavigation } from '@react-navigation/native';
+
+import styles from "./styles";
+
+import BgImage from "../../../assets/img/bg.svg";
 
 export default function Home() {
 
@@ -19,11 +23,7 @@ export default function Home() {
         <>
           <StatusBar barStyle="light-content" backgroundColor="#000" />
             <View style={styles.container}>
-            <ImageBackground 
-              style={styles.bgImage} 
-              imageStyle={{ opacity: 0.3 }}
-              source={require("../../../assets/bgImage.png")}
-            >
+            <BgImage height={Dimensions.get('screen').height + 50} width={Dimensions.get('screen').width} style={styles.bgImage} />
               <Image
                 style={styles.logo} 
                 source={require("../../../assets/logo.png")}
@@ -52,7 +52,6 @@ export default function Home() {
               <Text style={styles.copyRight}>Copyright © 2020 OS PICAS company</Text>
             </View>
 
-            </ImageBackground>
             </View>
         </>
       );

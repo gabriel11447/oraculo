@@ -6,13 +6,13 @@ const styles = StyleSheet.create({
     backgroundColor: "#1F2229",
   },
   container: {
+    // backgroundColor: "#f00",
     flexDirection: "column",
   },
   bgImage: {
     flex: 1,
     zIndex: -1,
-    height: Dimensions.get('screen').height,
-    width: Dimensions.get('screen').width,
+    position: "absolute",
   },
   flagContainer: {
     position: "absolute",
@@ -27,12 +27,12 @@ const styles = StyleSheet.create({
     alignItems: "center",
     height: 460,
   },
-  rankBanner: {
-    position: "absolute",
-    width: 270,
-    top: 370,
-    height:140
-  },
+  // rankBanner: {
+  //   position: "absolute",
+  //   width: 270,
+  //   top: 370,
+  //   height:140
+  // },
   summonerName: {
     color: "#E8BC2B",
     fontFamily:"Asul-Bold",
