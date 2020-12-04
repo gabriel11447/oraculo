@@ -1,4 +1,4 @@
-import { StyleSheet, Dimensions } from "react-native";
+import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
   pageContainer: {
@@ -6,7 +6,6 @@ const styles = StyleSheet.create({
     backgroundColor: "#1F2229",
   },
   container: {
-    // backgroundColor: "#f00",
     flexDirection: "column",
   },
   bgImage: {
@@ -25,21 +24,15 @@ const styles = StyleSheet.create({
   flag: {
     justifyContent: "flex-start",
     alignItems: "center",
-    height: 460,
+    height: 240,
   },
-  // rankBanner: {
-  //   position: "absolute",
-  //   width: 270,
-  //   top: 370,
-  //   height:140
-  // },
   summonerName: {
     color: "#E8BC2B",
     fontFamily:"Asul-Bold",
     fontSize: 28,
     textAlign: "center",
     marginTop: 28,
-    marginBottom: 92,
+    marginBottom: 0,
     marginRight:60
   },
   summonerIcon: {
@@ -67,17 +60,21 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent:"space-evenly"
   },
-  textDesign:{
+  menuText:{
     color: "#E8BC2B",
     width:120,
     fontFamily:"Asul-Bold",
     fontSize:20,
     borderBottomWidth:2,
     borderBottomColor:"#E8BC2B",
+    opacity: 0.5,
+    textAlign:"center",
+  },
+  menuTextHighlight: {
+    opacity: 1,
     textShadowColor: '#E8BC2B',
     textShadowOffset: { width: -1, height: 1 },
     textShadowRadius: 20,
-    textAlign:"center",
   },
   buttonText: {
     color: "#E8BC2B",
@@ -87,7 +84,6 @@ const styles = StyleSheet.create({
     marginBottom: 92,
     marginRight:50,
   },
-  
   
   });
   

@@ -1,30 +1,26 @@
 import React from "react";
-import { Text, View, ScrollView } from "react-native";
+import { Text, View, ScrollView, Animated } from "react-native";
 import styles from "./style.js";
 import CardHistory from "../cardHistory/"
 
-export default function History() {
-
-    function handleScroll() {
-
-    }
+export default function History({ onScroll }) {
 
     return (
         <>
-            <View style={{flexDirection:"row"}}>
+            <View style={{flexDirection:"row", marginLeft: 5}}>
                 <Text style={ styles.winRate }>WIN RATE</Text>
                 <Text style={ styles.winRate }>60%</Text>
             </View>
             
-            <View style={{padding:5}}>
+            <View style={{marginHorizontal: 15,}}>
                 <View style={styles.loss}>
                     <View style={styles.win}>
-                        <Text style={{color:"#1BA9BD", fontSize:1}}>{""}</Text>
+                        <Text>{""}</Text>
                     </View>
                 </View>
             </View>
 
-            <ScrollView onScroll={handleScroll}>
+            <ScrollView style={{marginBottom: 700}} onScroll={onScroll}>
                 <CardHistory/>
                 <CardHistory/>
                 <CardHistory/>
@@ -35,11 +31,8 @@ export default function History() {
                 <CardHistory/>
                 <CardHistory/>
                 <CardHistory/>
-                <CardHistory/>
-                <CardHistory/>
+
             </ScrollView>
-            
-            
             
         </>
     );
