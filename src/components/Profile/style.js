@@ -1,26 +1,26 @@
 import { StyleSheet, Dimensions } from "react-native";
 
 const styles = StyleSheet.create({
-    perfil:{
+    rankTypeText:{
         color: "#E8BC2B",
-        fontFamily:"Asul-Regular",
+        fontFamily:"Asul-Bold",
         fontSize:20,
         textAlign:"center",
-        width: 115,
+        width: 130,
       },
       profileContainer:{
         paddingVertical:3,
         flexDirection:"row",
         justifyContent: "space-evenly",
       },
-      eloText:{
+      rankText:{
         color: "#fff",
         fontFamily: "Asul-Regular",
         fontSize:16,
         textAlign: "center",
         width: 115,
       },
-      eloImage:{
+      rankImage:{
         flexDirection:"row", 
         justifyContent: "center",
         width: 400,

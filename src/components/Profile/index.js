@@ -7,18 +7,18 @@ export default function Profile() {
   return (
     <View>
       <View style={styles.profileContainer}>
-        <Text style={styles.perfil}>SOLO / DUO</Text>
-        <Text style={styles.perfil}>FLEX 5x5</Text>
+        <Text style={styles.rankTypeText}>SOLO / DUO</Text>
+        <Text style={styles.rankTypeText}>FLEX 5x5</Text>
       </View>
 
       <View style={styles.profileContainer}>
-        <Text style={styles.eloText}>BRONZE II</Text>
-        <Text style={styles.eloText}>PRATA III</Text>
+        <Text style={styles.rankText}>BRONZE II</Text>
+        <Text style={styles.rankText}>PRATA III</Text>
       </View>
 
-      <View style={styles.eloImage}>
-        <Image style={{ height: 150 }} source={require("../../../assets/rankIconBronze.png")} />
-        <Image style={{ height: 150 }} source={require("../../../assets/rankIconPrata.png")} />
+      <View style={styles.rankImage}>
+        <Image style={{ height: 180 }} source={require("../../../assets/rankIconBronze.png")} />
+        <Image style={{ height: 180 }} source={require("../../../assets/rankIconPrata.png")} />
       </View>
 
     </View>
