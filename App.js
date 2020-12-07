@@ -5,14 +5,14 @@ import { createStackNavigator } from '@react-navigation/stack';
 import Home from "./src/pages/Home";
 import Main from "./src/pages/Main";
 
-function HomeScreen() {
+function HomeScreen({ navigation: { navigate } }) {
   return (
     <Home/>
   );
 }
 
-function MainScreen(){
-  return(<Main/>);
+function MainScreen({ navigation, route }){
+  return(<Main userName = {route.params.conteudocampoUser}/>);
 }
 
 const Stack = createStackNavigator();

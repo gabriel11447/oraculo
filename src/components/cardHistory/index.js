@@ -2,7 +2,7 @@ import React from "react";
 import { Text, View, ImageBackground } from "react-native";
 import styles from "./style.js";
 
-export default function CardHistory() {
+export default function CardHistory({championID, gameID, gameTime}) {
     return(
         <View style={{flexDirection:"row", marginHorizontal:10, marginVertical: 7}}>
             <View style={styles.cardWin}>
@@ -22,10 +22,13 @@ export default function CardHistory() {
                     </View>
                     <View style={styles.matchInfo}>
                         <Text style={styles.matchInfoText}>
-                            35:18
+                            {gameTime}
                         </Text>
                         <Text style={styles.matchInfoText}>
                             11/13/10
+                        </Text>
+                        <Text style={styles.matchInfoText}>
+                            {championID}
                         </Text>
                     </View>
                 </ImageBackground>

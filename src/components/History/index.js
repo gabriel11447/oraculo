@@ -1,10 +1,10 @@
 import React from "react";
-import { Text, View, ScrollView, Animated } from "react-native";
+import { Text, View, FlatList } from "react-native";
 import styles from "./style.js";
 import CardHistory from "../cardHistory/"
 
-export default function History({ onScroll }) {
-
+export default function History({ onScroll, matchs }) {
+    
     return (
         <>
             <View style={{flexDirection:"row", marginLeft: 5}}>
@@ -19,20 +19,14 @@ export default function History({ onScroll }) {
                     </View>
                 </View>
             </View>
-
-            <ScrollView style={{marginBottom: 700}} onScroll={onScroll}>
-                <CardHistory/>
-                <CardHistory/>
-                <CardHistory/>
-                <CardHistory/>
-                <CardHistory/>
-                <CardHistory/>
-                <CardHistory/>
-                <CardHistory/>
-                <CardHistory/>
-                <CardHistory/>
-
-            </ScrollView>
+            
+            <FlatList style={{marginBottom: 700}} onScroll={onScroll}
+                data={matchs}
+                keyExtractor={(item) => item.gameId}
+                renderItem={({ item }) => (
+                    <CardHistory key={item.gameId} championID={item.champion} gameTime={item.timestamp} gameID={item.gameId}/>
+                )}
+            />
             
         </>
     );

@@ -1,5 +1,6 @@
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import { useNavigation } from '@react-navigation/native';
-import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -8,17 +9,17 @@ import {
   ImageBackground,
   TouchableOpacity,
   Dimensions,
-  ScrollView,
-  Animated
+  Animated,
+  ActivityIndicator
 } from 'react-native';
 import styles from "./styles";
 import Profile from "../../components/Profile/";
 import History from "../../components/History/";
-
 import BgImage from "../../../assets/img/bg.svg";
 import Flag from "../../../assets/img/flag.svg";
 
-export default function Main() {
+export default function Main({userName}) {
+  
   const [profileButton, setProfileButton] = useState(true);
   const [matchButton, setMatchButton] = useState(false);
   const [animatedValue, setAnimatedValue] = useState(new Animated.Value(0));
@@ -54,14 +55,34 @@ export default function Main() {
     outputRange: [0, -50],
     extrapolate: 'clamp'
   });
+  
+  const [user, setUser] = useState([]);
+  const [load, setLoad] = useState(true);
+
+  useEffect(() => {
+    const searchUser = async () => {
+      try{
+        const urlUser = 'https://api-lol-pecege.herokuapp.com/invocador/'+userName;
+        const userResponse = await axios.get(urlUser)
+        setUser(userResponse.data)
+        setLoad(false)
+      }
+      catch(error){
+        console.log(error)
+      }
+    };
+    searchUser();
+  }, []);
 
     return (
       
+        !load ? 
+
         <View style={styles.pageContainer}>
           <StatusBar barStyle="light-content" backgroundColor="#000" />
           <View style={styles.container}>
             <BgImage height={Dimensions.get('screen').height + 50} width={Dimensions.get('screen').width} style={styles.bgImage} />
-
+          
             <Animated.View style={profileButton ? {height: 460} : { height: headerHeight } }>
                 <Animated.View style={[styles.flagContainer, profileButton ? {opacity: 1} : {opacity: opacityValue}]}>
                   <Flag />
@@ -77,21 +98,21 @@ export default function Main() {
                   </Text>
                   </TouchableOpacity>
                   <Text style={styles.summonerName}>
-                    Caitando Sucata
+                    {user.invocador.name}
                   </Text>
                 </View>
                 <Animated.View style={!profileButton && {marginTop: marginTopValue}}>
                 <ImageBackground
                   style={styles.summonerIcon}
                   imageStyle={{ borderRadius: 50 }}
-                  source={{uri: "https://pbs.twimg.com/media/ETVfqtAXkAA0nc2.jpg"}}
+                  source={{uri: `https://api-lol-pecege.herokuapp.com/iconePerfil/${user.invocador.profileIconId}`}}
                 >
                 <Image
                   style={styles.iconBorder}
                   source={{uri: "https://static.wikia.nocookie.net/leagueoflegends/images/d/d7/Level_75_Summoner_Icon_Border.png/revision/latest?cb=20180324105840"}}
                 />
                 <Text style={styles.summonerLevel}>
-                  69
+                  {user.invocador.summonerLevel}
                 </Text>
                 </ImageBackground>
                 </Animated.View>
@@ -117,7 +138,7 @@ export default function Main() {
               </View>
               {profileButton ?
                 <Profile /> :
-                <History 
+                <History matchs={user.partidas}
                   onScroll={Animated.event(
                     [{ nativeEvent: {
                         contentOffset: {
@@ -125,11 +146,21 @@ export default function Main() {
                         },
                       }
                     }], {useNativeDriver: false})}
-                  />
+                />
               }
             </View>
           </View>
         </View>
+
+        :
+
+        <View style={styles.pageContainer}>
+          <View style={{flex:1, justifyContent:'center'}}>
+            <BgImage height={Dimensions.get('screen').height + 50} width={Dimensions.get('screen').width} style={styles.bgImage} />
+            <ActivityIndicator size="large" color="#E8BC2B" />
+          </View>
+        </View>   
+
       );
 }
 

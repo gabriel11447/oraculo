@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {
   View,
   TextInput,
@@ -19,6 +19,9 @@ export default function Home() {
 
   const navigation = useNavigation();
 
+  let campoUser;
+  let conteudocampoUser = "";
+
     return (
         <>
           <StatusBar barStyle="light-content" backgroundColor="#000" />
@@ -34,13 +37,16 @@ export default function Home() {
                   style={styles.searchIcon}
                 /> 
               <TextInput
+                ref={(inputUser) => (campoUser = inputUser)}
+                onChangeText={(texto) => (conteudocampoUser = texto)}
                 style={styles.input}
                 placeholder="Buscar invocador"
                 placeholderTextColor="#CDBE91"
               />
 
               <TouchableOpacity style={styles.button} onPress={()=>{
-                navigation.navigate('Main')
+                campoUser.clear();
+                navigation.navigate('Main', {conteudocampoUser});
               }}>
                 <Text style={styles.buttonText}>
                   {">"}
@@ -49,7 +55,7 @@ export default function Home() {
             </View>
 
             <View style={{flex:1}}>
-              <Text style={styles.copyRight}>Copyright © 2020 OS PICAS company</Text>
+              <Text style={styles.copyRight}>Copyright © 2020 MUTRICA DOGS S.A.</Text>
             </View>
 
             </View>
