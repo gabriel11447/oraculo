@@ -22,9 +22,9 @@ export default function History({ onScroll, matchs }) {
             
             <FlatList style={{marginBottom: 700}} onScroll={onScroll}
                 data={matchs}
-                keyExtractor={(item) => item.gameId}
+                keyExtractor={(item) => item.gameId.toString()}
                 renderItem={({ item }) => (
-                    <CardHistory key={item.gameId} championID={item.champion} gameTime={item.timestamp} gameID={item.gameId}/>
+                    <CardHistory championIMG={item.champion.imagem.splashMobile} championID={item.champion.key} gameTime={item.timestamp} gameID={item.gameId}/>
                 )}
             />
             
