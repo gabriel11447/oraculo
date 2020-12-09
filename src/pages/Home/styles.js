@@ -4,8 +4,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: "column",
-    backgroundColor: "#1F2229",
-    
+    backgroundColor: "#1F2229",    
   },
   inputContainer: {
     justifyContent: "center",
@@ -15,14 +14,27 @@ const styles = StyleSheet.create({
     alignItems:"center",
   },
   logo: {
-    height:95,
-    width:216.82,
-    marginTop: 265,
+    marginTop: Dimensions.get("screen").height/4,
+    marginBottom: 25,
     alignSelf: "center",
+  },
+  backgroundView: {
+    zIndex: -1,
+    position: "absolute",
+    height: Dimensions.get("window").height,
+    width: Dimensions.get("window").width,
   },
   bgImage: {
     zIndex: -1,
+    opacity: 0.6,
     position: "absolute",
+    resizeMode: "cover",
+    height: '100%',
+    width: '100%',
+  },
+  borderBottom: {
+    borderBottomWidth:3,
+    borderColor: "#CDBE91",
   },
   input: {
     marginTop:-80,
@@ -30,19 +42,18 @@ const styles = StyleSheet.create({
     flex: 1,
     color: "white",
     fontSize: 20,
-    marginRight: 20,
-    paddingLeft: 35,
+    marginRight: 10,
+    paddingLeft: 15,
     color: "#CDBE91",
     backgroundColor: "#2A3540",
-    borderLeftWidth:3,
-    borderColor: "#CDBE91",
   },
   button: {
     marginTop:-80,
-    marginRight: -10,
     backgroundColor: "#2A3540",
     width: 50,
     height: 50,
+    alignItems: "center",
+    justifyContent: "center",
     color: "#CDBE91",
   },
   buttonText: {
@@ -51,8 +62,6 @@ const styles = StyleSheet.create({
     textAlign: "center",
   },
  searchIcon:{
-  marginTop:-80,
-   marginRight:-33,
    zIndex:1
  },
  copyRight:{

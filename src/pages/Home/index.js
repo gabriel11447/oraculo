@@ -5,15 +5,13 @@ import {
   Text,
   StatusBar,
   Image,
-  ImageBackground,
   TouchableOpacity,
-  Dimensions,
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 import styles from "./styles";
 
-import BgImage from "../../../assets/img/bg.svg";
+import Brand from "../../../assets/img/brand.svg";
 
 export default function Home() {
 
@@ -26,33 +24,36 @@ export default function Home() {
         <>
           <StatusBar barStyle="light-content" backgroundColor="#000" />
             <View style={styles.container}>
-            <BgImage height={Dimensions.get('screen').height + 50} width={Dimensions.get('screen').width} style={styles.bgImage} />
-              <Image
-                style={styles.logo} 
-                source={require("../../../assets/logo-new.png")}
+              <View style={styles.backgroundView}>
+                <Image
+                  source={require("../../../assets/img/bg.png")} 
+                  style={styles.bgImage}
+                />
+              </View>
+              <Brand
+                height={131.45}
+                width={300}
+                style={styles.logo}
               />
             <View style={styles.inputContainer}>
-              <Image 
-                  source={require("../../../assets/lupaBuscar-new.png")}
-                  style={styles.searchIcon}
-                /> 
               <TextInput
                 ref={(inputUser) => (campoUser = inputUser)}
                 onChangeText={(texto) => (conteudocampoUser = texto)}
-                style={styles.input}
+                style={[styles.input, styles.borderBottom]}
                 placeholder="Buscar invocador"
-                placeholderTextColor="#CDBE91"
+                placeholderTextColor="#8C8771"
                 
               />
 
-              <TouchableOpacity style={styles.button} onPress={()=>{
+              <TouchableOpacity style={[styles.button, styles.borderBottom]} onPress={()=>{
                 campoUser.clear();
                 navigation.navigate('Main', {conteudocampoUser});
               }}>
                 
-                <Text style={styles.buttonText}>
-                  {">"}
-                </Text>
+                <Image 
+                  source={require("../../../assets/lupaBuscar-new.png")}
+                  style={styles.searchIcon}
+                /> 
               </TouchableOpacity>
             </View>
 

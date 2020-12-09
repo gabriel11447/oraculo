@@ -1,4 +1,4 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet, Dimensions } from "react-native";
 
 const styles = StyleSheet.create({
   pageContainer: {
@@ -8,10 +8,19 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: "column",
   },
-  bgImage: {
-    flex: 1,
+  backgroundView: {
     zIndex: -1,
     position: "absolute",
+    height: Dimensions.get("window").height,
+    width: Dimensions.get("window").width,
+  },
+  bgImage: {
+    zIndex: -1,
+    opacity: 0.6,
+    position: "absolute",
+    resizeMode: "cover",
+    height: '100%',
+    width: '100%',
   },
   flagContainer: {
     position: "absolute",
@@ -27,7 +36,7 @@ const styles = StyleSheet.create({
     height: 240,
   },
   summonerName: {
-    color: "#E8BC2B",
+    color: "#CDBE91",
     fontFamily:"Asul-Bold",
     fontSize: 28,
     textAlign: "center",
@@ -61,23 +70,23 @@ const styles = StyleSheet.create({
     justifyContent:"space-evenly"
   },
   menuText:{
-    color: "#E8BC2B",
+    color: "#CDBE91",
     width:120,
     fontFamily:"Asul-Bold",
     fontSize:20,
     borderBottomWidth:2,
-    borderBottomColor:"#E8BC2B",
+    borderBottomColor:"#CDBE91",
     opacity: 0.5,
     textAlign:"center",
   },
   menuTextHighlight: {
     opacity: 1,
-    textShadowColor: '#E8BC2B',
+    textShadowColor: '#CDBE91',
     textShadowOffset: { width: -1, height: 1 },
     textShadowRadius: 20,
   },
   buttonText: {
-    color: "#E8BC2B",
+    color: "#CDBE91",
     fontSize: 34,
     textAlign: "center",
     marginTop: 23,

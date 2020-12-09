@@ -81,7 +81,12 @@ export default function Main({userName}) {
         <View style={styles.pageContainer}>
           <StatusBar barStyle="light-content" backgroundColor="#000" />
           <View style={styles.container}>
-            <BgImage height={Dimensions.get('screen').height + 50} width={Dimensions.get('screen').width} style={styles.bgImage} />
+          <View style={styles.backgroundView}>
+                <Image
+                  source={require("../../../assets/img/bg.png")} 
+                  style={styles.bgImage}
+                />
+              </View>
           
             <Animated.View style={profileButton ? {height: 460} : { height: headerHeight } }>
                 <Animated.View style={[styles.flagContainer, profileButton ? {opacity: 1} : {opacity: opacityValue}]}>
@@ -105,7 +110,7 @@ export default function Main({userName}) {
                 <ImageBackground
                   style={styles.summonerIcon}
                   imageStyle={{ borderRadius: 50 }}
-                  source={{uri: `https://api-lol-pecege.herokuapp.com/iconePerfil/${user.invocador.profileIconId}`}}
+                  source={{uri: `https://api-lol-pecege.herokuapp.com/datadragon/iconePerfil/${user.invocador.profileIconId}`}}
                 >
                 <Image
                   style={styles.iconBorder}
@@ -137,8 +142,11 @@ export default function Main({userName}) {
                 </TouchableOpacity>
               </View>
               {profileButton ?
-                <Profile /> :
-                <History matchs={user.partidas}
+                <>
+                {animatedValue.setValue(0)}
+                <Profile />  
+                </> :
+                <History matches={user.partidas}
                   onScroll={Animated.event(
                     [{ nativeEvent: {
                         contentOffset: {
@@ -156,8 +164,13 @@ export default function Main({userName}) {
 
         <View style={styles.pageContainer}>
           <View style={{flex:1, justifyContent:'center'}}>
-            <BgImage height={Dimensions.get('screen').height + 50} width={Dimensions.get('screen').width} style={styles.bgImage} />
-            <ActivityIndicator size="large" color="#E8BC2B" />
+          <View style={styles.backgroundView}>
+                <Image
+                  source={require("../../../assets/img/bg.png")} 
+                  style={styles.bgImage}
+                />
+              </View>
+            <ActivityIndicator size="large" color="#CDBE91" />
           </View>
         </View>   
 
