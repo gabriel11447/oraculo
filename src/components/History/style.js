@@ -15,12 +15,13 @@ const styles = StyleSheet.create({
   loss:{
     backgroundColor:"#EC2040",
     height:13,
+    width: large - 30
   },
 
   win:{
     backgroundColor:"#1BA9BD",
-    width: ((large/100)*60),
     height:13,
+    width: ((large/100)*60)
   },
   
 })

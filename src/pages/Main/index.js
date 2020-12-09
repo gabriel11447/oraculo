@@ -73,7 +73,7 @@ export default function Main({userName}) {
     };
     searchUser();
   }, []);
-
+    
     return (
       
         !load ? 
@@ -146,7 +146,9 @@ export default function Main({userName}) {
                 {animatedValue.setValue(0)}
                 <Profile />  
                 </> :
-                <History matches={user.partidas}
+                <History 
+                  matches={user.partidas}
+                  winRate={user.winRate}
                   onScroll={Animated.event(
                     [{ nativeEvent: {
                         contentOffset: {
