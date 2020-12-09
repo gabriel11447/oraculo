@@ -2,7 +2,7 @@ import { StyleSheet, Dimensions } from "react-native";
 
 const styles = StyleSheet.create({
     rankTypeText:{
-        color: "#E8BC2B",
+        color: "#CDBE91",
         fontFamily:"Asul-Bold",
         fontSize:20,
         textAlign:"center",
