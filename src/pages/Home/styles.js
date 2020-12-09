@@ -5,6 +5,7 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: "column",
     backgroundColor: "#1F2229",
+    
   },
   inputContainer: {
     justifyContent: "center",
@@ -14,7 +15,9 @@ const styles = StyleSheet.create({
     alignItems:"center",
   },
   logo: {
-    marginTop: 40,
+    height:95,
+    width:216.82,
+    marginTop: 265,
     alignSelf: "center",
   },
   bgImage: {
@@ -22,6 +25,7 @@ const styles = StyleSheet.create({
     position: "absolute",
   },
   input: {
+    marginTop:-80,
     fontFamily:"Asul-Regular",
     flex: 1,
     color: "white",
@@ -29,25 +33,25 @@ const styles = StyleSheet.create({
     marginRight: 20,
     paddingLeft: 35,
     color: "#CDBE91",
-    backgroundColor: "#010101",
-    borderWidth: 1,
-    borderColor: "#785A28",
+    backgroundColor: "#2A3540",
+    borderLeftWidth:3,
+    borderColor: "#CDBE91",
   },
   button: {
+    marginTop:-80,
     marginRight: -10,
-    backgroundColor: "#010101",
+    backgroundColor: "#2A3540",
     width: 50,
     height: 50,
     color: "#CDBE91",
-    borderWidth: 1,
-    borderColor: "#785A28",
   },
   buttonText: {
-    color: "#E8BC2B",
+    color: "#CDBE91",
     fontSize: 34,
     textAlign: "center",
   },
  searchIcon:{
+  marginTop:-80,
    marginRight:-33,
    zIndex:1
  },

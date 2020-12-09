@@ -29,11 +29,11 @@ export default function Home() {
             <BgImage height={Dimensions.get('screen').height + 50} width={Dimensions.get('screen').width} style={styles.bgImage} />
               <Image
                 style={styles.logo} 
-                source={require("../../../assets/logo.png")}
+                source={require("../../../assets/logo-new.png")}
               />
             <View style={styles.inputContainer}>
               <Image 
-                  source={require("../../../assets/lupaBuscar.png")}
+                  source={require("../../../assets/lupaBuscar-new.png")}
                   style={styles.searchIcon}
                 /> 
               <TextInput
@@ -42,12 +42,14 @@ export default function Home() {
                 style={styles.input}
                 placeholder="Buscar invocador"
                 placeholderTextColor="#CDBE91"
+                
               />
 
               <TouchableOpacity style={styles.button} onPress={()=>{
                 campoUser.clear();
                 navigation.navigate('Main', {conteudocampoUser});
               }}>
+                
                 <Text style={styles.buttonText}>
                   {">"}
                 </Text>
