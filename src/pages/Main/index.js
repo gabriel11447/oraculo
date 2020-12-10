@@ -8,14 +8,13 @@ import {
   Image,
   ImageBackground,
   TouchableOpacity,
-  Dimensions,
   Animated,
   ActivityIndicator
 } from 'react-native';
 import styles from "./styles";
 import Profile from "../../components/Profile/";
 import History from "../../components/History/";
-import BgImage from "../../../assets/img/bg.svg";
+import Back from "../../../assets/img/back.svg";
 import Flag from "../../../assets/img/flag.svg";
 
 export default function Main({userName}) {
@@ -81,12 +80,19 @@ export default function Main({userName}) {
         <View style={styles.pageContainer}>
           <StatusBar barStyle="light-content" backgroundColor="#000" />
           <View style={styles.container}>
+
+          <TouchableOpacity style={styles.buttonImage} onPress={()=>{
+            navigation.goBack()
+          }}>
+            <Back />
+          </TouchableOpacity>
+
           <View style={styles.backgroundView}>
-                <Image
-                  source={require("../../../assets/img/bg.png")} 
-                  style={styles.bgImage}
-                />
-              </View>
+              <Image
+                source={require("../../../assets/img/bg.png")} 
+                style={styles.bgImage}
+              />
+          </View>
           
             <Animated.View style={profileButton ? {height: 460} : { height: headerHeight } }>
                 <Animated.View style={[styles.flagContainer, profileButton ? {opacity: 1} : {opacity: opacityValue}]}>
@@ -94,18 +100,9 @@ export default function Main({userName}) {
                 </Animated.View>
 
               <View style={styles.flag}>
-                <View style={{flexDirection:"row"}}>
-                  <TouchableOpacity onPress={()=>{
-                    navigation.goBack()
-                  }}>
-                  <Text style={styles.buttonText}>
-                      {"<"}
-                  </Text>
-                  </TouchableOpacity>
                   <Text style={styles.summonerName}>
                     {user.invocador.name}
                   </Text>
-                </View>
                 <Animated.View style={!profileButton && {marginTop: marginTopValue}}>
                 <ImageBackground
                   style={styles.summonerIcon}

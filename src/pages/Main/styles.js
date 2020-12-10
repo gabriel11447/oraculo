@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   flag: {
-    justifyContent: "flex-start",
+    justifyContent: "space-between",
     alignItems: "center",
     height: 240,
   },
@@ -41,8 +41,6 @@ const styles = StyleSheet.create({
     fontSize: 28,
     textAlign: "center",
     marginTop: 28,
-    marginBottom: 0,
-    marginRight:60
   },
   summonerIcon: {
     height: 95,
@@ -71,27 +69,25 @@ const styles = StyleSheet.create({
   },
   menuText:{
     color: "#CDBE91",
-    width:120,
-    fontFamily:"Asul-Bold",
-    fontSize:20,
-    borderBottomWidth:2,
-    borderBottomColor:"#CDBE91",
+    width: 120,
+    fontFamily: "Asul-Bold",
+    fontSize: 20,
+    borderBottomWidth: 2,
+    borderBottomColor: "#CDBE91",
     opacity: 0.5,
-    textAlign:"center",
+    textAlign: "center",
   },
   menuTextHighlight: {
     opacity: 1,
-    textShadowColor: '#CDBE91',
+    textShadowColor: "#CDBE91",
     textShadowOffset: { width: -1, height: 1 },
     textShadowRadius: 20,
   },
-  buttonText: {
+  buttonImage: {
     color: "#CDBE91",
-    fontSize: 34,
-    textAlign: "center",
-    marginTop: 23,
-    marginBottom: 92,
-    marginRight:50,
+    position: "absolute",
+    marginTop: 36,
+    marginLeft: 20,
   },
   
   });
