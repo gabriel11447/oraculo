@@ -17,8 +17,8 @@ export default function Profile() {
       </View>
 
       <View style={styles.rankImage}>
-        <Image style={{ height: 180 }} source={require("../../../assets/rankIconBronze.png")} />
-        <Image style={{ height: 180 }} source={require("../../../assets/rankIconPrata.png")} />
+        <Image source={require("../../../assets/rankSoloIcon.png")} />
+        <Image source={require("../../../assets/rankFlexIcon.png")} />
       </View>
 
     </View>

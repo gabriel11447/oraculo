@@ -1,4 +1,4 @@
-import { StyleSheet, Dimensions } from "react-native";
+import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
     rankTypeText:{
@@ -22,8 +22,7 @@ const styles = StyleSheet.create({
       },
       rankImage:{
         flexDirection:"row", 
-        justifyContent: "center",
-        width: 400,
+        justifyContent: "space-evenly",
       }
 })
 
