@@ -2,7 +2,27 @@ import React from "react";
 import { Text, View, ImageBackground } from "react-native";
 import styles from "./style.js";
 
-export default function CardHistory({ matchTime, championImage, win, kda }) {
+export default function CardHistory({ matchTime, championImage, win, kda, queueName}) {
+
+    
+    function makeQueueName(){
+
+        let queue = "";
+
+        if(queueName==450){
+            queue = "ARAM";
+        }
+        else if(queueName==400){
+            queue = "NORMAL GAME"
+        }
+        else if(queueName==420){
+            queue = "RANKED SOLO"
+        }
+        else if(queueName==440){
+            queue = "RANKED FLEX";
+        }
+        return queue;
+    }
 
     return(
         <View style={{flexDirection:"row", marginHorizontal:10, marginVertical: 7}}>
@@ -28,10 +48,13 @@ export default function CardHistory({ matchTime, championImage, win, kda }) {
                     </View>
                     <View style={styles.matchInfo}>
                         <Text style={styles.matchInfoText}>
-                            {matchTime}
+                            {makeQueueName()}
                         </Text>
                         <Text style={styles.matchInfoText}>
                             {kda}
+                        </Text>
+                        <Text style={styles.matchInfoText}>
+                            {matchTime}
                         </Text>
                     </View>
                 </ImageBackground>

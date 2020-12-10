@@ -27,6 +27,7 @@ export default function History({ onScroll, matches, winRate }) {
                 keyExtractor={(item) => item.gameId.toString()}
                 renderItem={({ item }) => (
                     <CardHistory
+                        queueName = {item.queue}
                         championImage={item.champion.imagem.splashMobile} 
                         matchTime={item.dados.duration} 
                         win={item.dados.win}
