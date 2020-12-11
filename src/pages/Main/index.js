@@ -51,12 +51,13 @@ export default function Main({userName}) {
 
   const marginTopValue = animatedValue.interpolate({
     inputRange: [0, 920-560],
-    outputRange: [0, -50],
+    outputRange: [90, 50],
     extrapolate: 'clamp'
   });
   
   const [user, setUser] = useState([]);
-  const [load, setLoad] = useState(true);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
 
   useEffect(() => {
     const searchUser = async () => {
@@ -64,10 +65,10 @@ export default function Main({userName}) {
         const urlUser = 'https://api-lol-pecege.herokuapp.com/invocador/'+userName;
         const userResponse = await axios.get(urlUser)
         setUser(userResponse.data)
-        setLoad(false)
+        setLoading(false)
       }
       catch(error){
-        console.log(error)
+        setError(true);
       }
     };
     searchUser();
@@ -75,7 +76,7 @@ export default function Main({userName}) {
     
     return (
       
-        !load ? 
+        !loading ? 
 
         <View style={styles.pageContainer}>
           <StatusBar barStyle="light-content" backgroundColor="#000" />
@@ -103,7 +104,7 @@ export default function Main({userName}) {
                   <Text style={styles.summonerName}>
                     {user.invocador.name}
                   </Text>
-                <Animated.View style={!profileButton && {marginTop: marginTopValue}}>
+                <Animated.View style={[styles.iconContainer, !profileButton && {marginTop: marginTopValue}]}>
                 <ImageBackground
                   style={styles.summonerIcon}
                   imageStyle={{ borderRadius: 50 }}
@@ -141,7 +142,9 @@ export default function Main({userName}) {
               {profileButton ?
                 <>
                 {animatedValue.setValue(0)}
-                <Profile />  
+                <Profile 
+                  rank={user.invocador.rank}
+                />  
                 </> :
                 <History 
                   matches={user.partidas}
@@ -169,7 +172,20 @@ export default function Main({userName}) {
                   style={styles.bgImage}
                 />
               </View>
-            <ActivityIndicator size="large" color="#CDBE91" />
+              { error ?
+                <View style={styles.errorContainer}>
+                  <View>
+                  <TouchableOpacity style={styles.buttonImage} onPress={()=>{
+                    navigation.goBack()
+                  }}>
+                    <Back />
+                  </TouchableOpacity>
+                  </View>
+                  <Text style={styles.errorText}>Erro ao encontrar o invocador</Text>
+                </View>
+                :
+                <ActivityIndicator size="large" color="#CDBE91" />
+              }
           </View>
         </View>   
 

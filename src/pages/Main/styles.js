@@ -31,14 +31,17 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   flag: {
-    justifyContent: "space-between",
+    justifyContent: "flex-start",
     alignItems: "center",
     height: 240,
+  },
+  iconContainer: {
+    marginTop: 90,
   },
   summonerName: {
     color: "#CDBE91",
     fontFamily:"Asul-Bold",
-    fontSize: 28,
+    fontSize: 26,
     textAlign: "center",
     marginTop: 28,
   },
@@ -86,8 +89,21 @@ const styles = StyleSheet.create({
   buttonImage: {
     color: "#CDBE91",
     position: "absolute",
+    zIndex: 1,
     marginTop: 36,
     marginLeft: 20,
+  },
+  errorContainer: {
+    flex: 1,
+    flexDirection: "column",
+    justifyContent: "space-between"
+  },
+  errorText: {
+    color: "#CDBE91",
+    fontFamily: "Asul-Bold",
+    fontSize: 24,
+    textAlign: "center",
+    marginBottom: Dimensions.get("window").height / 2,
   },
   
   });
