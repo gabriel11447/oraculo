@@ -9,17 +9,16 @@ export default function CardHistory({ matchTime, championImage, win, kda, queueN
 
         let queue = "";
 
-        if(queueName==450){
+        if(queueName == 450){
             queue = "ARAM";
-        }
-        else if(queueName==400){
-            queue = "NORMAL GAME"
-        }
-        else if(queueName==420){
+        } else if(queueName == 400){
+            queue = "NORMAL"
+        } else if(queueName == 420){
             queue = "RANKED SOLO"
-        }
-        else if(queueName==440){
+        } else if(queueName == 440){
             queue = "RANKED FLEX";
+        } else {
+            queue = "SPECIAL"
         }
         return queue;
     }
