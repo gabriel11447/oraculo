@@ -31,9 +31,9 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   flag: {
+    height: Dimensions.get("screen").height / 2,
     justifyContent: "flex-start",
     alignItems: "center",
-    height: 240,
   },
   iconContainer: {
     marginTop: 90,
@@ -41,19 +41,19 @@ const styles = StyleSheet.create({
   summonerName: {
     color: "#CDBE91",
     fontFamily:"Asul-Bold",
-    fontSize: 26,
+    fontSize: 22,
     textAlign: "center",
     marginTop: 28,
   },
   summonerIcon: {
-    height: 95,
-    width: 95,
+    height: 85,
+    width: 85,
     justifyContent: "center",
     alignItems: "center",
   },
   iconBorder: {
-    height: 175,
-    width: 175,
+    height: 165,
+    width: 165,
     justifyContent: "center",
     alignItems: "center",
   },
@@ -61,13 +61,11 @@ const styles = StyleSheet.create({
     color: "#fff",
     fontSize: 10,
     position: "absolute",
-    top: 92,
+    top: 84,
   },
   perfilContainer:{
     flexDirection:"row",
-    padding:10,
-    justifyContent: "center",
-    alignItems: "center",
+    padding: 10,
     justifyContent:"space-evenly"
   },
   menuText:{
@@ -86,11 +84,15 @@ const styles = StyleSheet.create({
     textShadowOffset: { width: -1, height: 1 },
     textShadowRadius: 20,
   },
-  buttonImage: {
+  menuTab: {
+    height: Dimensions.get("screen").height,
+    marginTop: (Dimensions.get("screen").height / 4) * 0.10,
+  },
+  backButtonImage: {
     color: "#CDBE91",
     position: "absolute",
     zIndex: 1,
-    marginTop: 36,
+    marginTop: 30,
     marginLeft: 20,
   },
   errorContainer: {

@@ -1,27 +1,27 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet, Dimensions } from "react-native";
 
 const styles = StyleSheet.create({
-    rankTypeText:{
+
+    rankTypeText: {
         color: "#CDBE91",
-        fontFamily:"Asul-Bold",
-        fontSize:20,
-        textAlign:"center",
+        fontFamily: "Asul-Bold",
+        fontSize: 18,
+        textAlign: "center",
         width: 130,
       },
-      profileContainer:{
-        paddingVertical:3,
+      profileContainer: {
         flexDirection:"row",
         justifyContent: "space-evenly",
       },
-      rankText:{
+      rankText: {
         color: "#fff",
         fontFamily: "Asul-Regular",
-        fontSize:16,
+        fontSize: 14,
         textAlign: "center",
         width: 115,
       },
-      rankImage:{
-        flexDirection:"row", 
+      rankImage: {
+        flexDirection: "row", 
         justifyContent: "space-evenly",
       }
 })

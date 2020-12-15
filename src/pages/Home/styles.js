@@ -4,19 +4,22 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: "column",
-    backgroundColor: "#1F2229",    
+    backgroundColor: "#1F2229",
   },
   inputContainer: {
-    justifyContent: "center",
-    marginTop: 85,
-    marginHorizontal: 20,
     flexDirection: "row",
+    justifyContent: "center",
+    marginHorizontal: 20,
     alignItems:"center",
   },
+  contentContainer: {
+    flex: 1,
+    marginTop: "45%",
+    justifyContent: "center",
+  },
   logo: {
-    marginTop: Dimensions.get("screen").height/4,
-    marginBottom: 25,
     alignSelf: "center",
+    marginBottom: 25,
   },
   backgroundView: {
     zIndex: -1,
@@ -32,12 +35,11 @@ const styles = StyleSheet.create({
     height: '100%',
     width: '100%',
   },
-  borderBottom: {
+  inputBorder: {
     borderBottomWidth:3,
     borderColor: "#CDBE91",
   },
   input: {
-    marginTop:-80,
     fontFamily:"Asul-Regular",
     flex: 1,
     color: "white",
@@ -48,7 +50,6 @@ const styles = StyleSheet.create({
     backgroundColor: "#2A3540",
   },
   button: {
-    marginTop:-80,
     backgroundColor: "#2A3540",
     width: 50,
     height: 50,

@@ -24,7 +24,7 @@ export default function CardHistory({ matchTime, championImage, win, kda, queueN
     }
 
     return(
-        <View style={{flexDirection:"row", marginHorizontal:10, marginVertical: 7}}>
+        <View style={{flexDirection:"row", alignSelf: "center", marginVertical: 7}}>
             <View style={win ? styles.cardWin : styles.cardLoss}>
                 <Text>{""}</Text>
             </View>

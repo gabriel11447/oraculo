@@ -38,20 +38,20 @@ export default function Main({userName}) {
   const navigation = useNavigation();
 
   const headerHeight = animatedValue.interpolate({
-    inputRange: [0, 920-480],
-    outputRange: [460, 240],
+    inputRange: [0, 800-480],
+    outputRange: [400, 200],
     extrapolate: 'clamp'
   });
 
   const opacityValue = animatedValue.interpolate({
-    inputRange: [0, 920-560],
+    inputRange: [0, 800-560],
     outputRange: [1, 0],
     extrapolate: 'clamp'
   });
 
   const marginTopValue = animatedValue.interpolate({
-    inputRange: [0, 920-560],
-    outputRange: [90, 50],
+    inputRange: [0, 800-560],
+    outputRange: [90, 40],
     extrapolate: 'clamp'
   });
   
@@ -62,7 +62,7 @@ export default function Main({userName}) {
   useEffect(() => {
     const searchUser = async () => {
       try{
-        const urlUser = 'https://api-lol-pecege.herokuapp.com/invocador/'+userName;
+        const urlUser = 'https://api-lol-pecege.herokuapp.com/invocador/' + userName;
         const userResponse = await axios.get(urlUser)
         setUser(userResponse.data)
         setLoading(false)
@@ -82,22 +82,22 @@ export default function Main({userName}) {
           <StatusBar barStyle="light-content" backgroundColor="#000" />
           <View style={styles.container}>
 
-          <TouchableOpacity style={styles.buttonImage} onPress={()=>{
-            navigation.goBack()
-          }}>
-            <Back />
-          </TouchableOpacity>
+            <TouchableOpacity style={styles.backButtonImage} onPress={()=>{
+              navigation.goBack()
+            }}>
+              <Back />
+            </TouchableOpacity>
 
-          <View style={styles.backgroundView}>
-              <Image
-                source={require("../../../assets/img/bg.png")} 
-                style={styles.bgImage}
-              />
-          </View>
+            <View style={styles.backgroundView}>
+                <Image
+                  source={require("../../../assets/img/bg.png")} 
+                  style={styles.bgImage}
+                />
+            </View>
           
-            <Animated.View style={profileButton ? {height: 460} : { height: headerHeight } }>
+            <Animated.View style={profileButton ? {height: 400} : { height: headerHeight } }>
                 <Animated.View style={[styles.flagContainer, profileButton ? {opacity: 1} : {opacity: opacityValue}]}>
-                  <Flag />
+                  <Flag height={460} />
                 </Animated.View>
 
               <View style={styles.flag}>
@@ -105,25 +105,24 @@ export default function Main({userName}) {
                     {user.invocador.name}
                   </Text>
                 <Animated.View style={[styles.iconContainer, !profileButton && {marginTop: marginTopValue}]}>
-                <ImageBackground
-                  style={styles.summonerIcon}
-                  imageStyle={{ borderRadius: 50 }}
-                  source={{uri: `https://api-lol-pecege.herokuapp.com/datadragon/iconePerfil/${user.invocador.profileIconId}`}}
-                >
-                <Image
-                  style={styles.iconBorder}
-                  source={{uri: "https://static.wikia.nocookie.net/leagueoflegends/images/d/d7/Level_75_Summoner_Icon_Border.png/revision/latest?cb=20180324105840"}}
-                />
-                <Text style={styles.summonerLevel}>
-                  {user.invocador.summonerLevel}
-                </Text>
-                </ImageBackground>
-                </Animated.View>
-                                    
+                  <ImageBackground
+                    style={styles.summonerIcon}
+                    imageStyle={{ borderRadius: 50 }}
+                    source={{uri: `https://api-lol-pecege.herokuapp.com/datadragon/iconePerfil/${user.invocador.profileIconId}`}}
+                  >
+                    <Image
+                      style={styles.iconBorder}
+                      source={{uri: "https://static.wikia.nocookie.net/leagueoflegends/images/d/d7/Level_75_Summoner_Icon_Border.png/revision/latest?cb=20180324105840"}}
+                    />
+                    <Text style={styles.summonerLevel}>
+                      {user.invocador.summonerLevel}
+                    </Text>
+                  </ImageBackground>
+                </Animated.View>                             
               </View>
-              </Animated.View>
+            </Animated.View>
 
-            <View>
+            <View style={styles.menuTab}>
               <View style={styles.perfilContainer}>
                 <TouchableOpacity
                   style={styles.button}

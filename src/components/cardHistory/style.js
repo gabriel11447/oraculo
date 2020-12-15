@@ -1,34 +1,27 @@
 import { StyleSheet, Dimensions } from "react-native";
 
-const large = Dimensions.get("screen").width;
+const large = Dimensions.get("screen").width *0.94;
 
 const styles = StyleSheet.create({
     match:{
-        marginTop:10,
-        width: 380,
+        marginTop: 0,
     },
     cardImage: {
         flex: 1,
         backgroundColor: "#2A3540",
         flexDirection: "row", 
         justifyContent: "space-between",
-        width: 360, 
+        width: large, 
         height: 92
     },
-    cardWin:{
-        marginTop:10,
-        marginLeft:5,
-        padding:2,
-        backgroundColor:"#1BA9BD",
-        height:92,
+    cardWin: {
+        padding: 2,
+        backgroundColor: "#1BA9BD",
         width: (large/100)
     },
-    cardLoss:{
-        marginTop:10,
-        marginLeft:5,
-        padding:2,
-        backgroundColor:"#EC2040",
-        height:92,
+    cardLoss: {
+        padding: 2,
+        backgroundColor: "#EC2040",
         width: (large/100)
     },
     matchResult: {
