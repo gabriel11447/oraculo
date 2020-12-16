@@ -17,6 +17,8 @@ import History from "../../components/History/";
 import Back from "../../../assets/img/back.svg";
 import Flag from "../../../assets/img/flag.svg";
 
+import FlagTrim from "../../components/FlagTrim/index";
+
 export default function Main({userName}) {
   
   const [profileButton, setProfileButton] = useState(true);
@@ -61,7 +63,7 @@ export default function Main({userName}) {
 
   useEffect(() => {
     const searchUser = async () => {
-      try{
+      try {
         const urlUser = 'https://api-lol-pecege.herokuapp.com/invocador/' + userName;
         const userResponse = await axios.get(urlUser)
         setUser(userResponse.data)
@@ -97,7 +99,10 @@ export default function Main({userName}) {
           
             <Animated.View style={profileButton ? {height: 400} : { height: headerHeight } }>
               <Animated.View style={[styles.flagContainer, profileButton ? {opacity: 1} : {opacity: opacityValue}]}>
-                <Flag height={460} />
+                <Flag height={460} width={247} />
+                <FlagTrim
+                  rank={user.invocador.rank}
+                />
               </Animated.View>
 
               <View style={styles.flag}>
