@@ -96,14 +96,14 @@ export default function Main({userName}) {
             </View>
           
             <Animated.View style={profileButton ? {height: 400} : { height: headerHeight } }>
-                <Animated.View style={[styles.flagContainer, profileButton ? {opacity: 1} : {opacity: opacityValue}]}>
-                  <Flag height={460} />
-                </Animated.View>
+              <Animated.View style={[styles.flagContainer, profileButton ? {opacity: 1} : {opacity: opacityValue}]}>
+                <Flag height={460} />
+              </Animated.View>
 
               <View style={styles.flag}>
-                  <Text style={styles.summonerName}>
-                    {user.invocador.name}
-                  </Text>
+                <Text style={styles.summonerName}>
+                  {user.invocador.name}
+                </Text>
                 <Animated.View style={[styles.iconContainer, !profileButton && {marginTop: marginTopValue}]}>
                   <ImageBackground
                     style={styles.summonerIcon}
@@ -119,8 +119,8 @@ export default function Main({userName}) {
                     </Text>
                   </ImageBackground>
                 </Animated.View>                             
-              </View>
-            </Animated.View>
+             </View>
+           </Animated.View>
 
             <View style={styles.menuTab}>
               <View style={styles.perfilContainer}>
@@ -164,26 +164,29 @@ export default function Main({userName}) {
         :
 
         <View style={styles.pageContainer}>
-          <View style={{flex:1, justifyContent:'center'}}>
-          <View style={styles.backgroundView}>
-                <Image
-                  source={require("../../../assets/img/bg.png")} 
-                  style={styles.bgImage}
-                />
-              </View>
+          <View style={styles.container}>
+            <View style={styles.backgroundView}>
+              <Image
+                source={require("../../../assets/img/bg.png")} 
+                style={styles.bgImage}
+              />
+            </View>
               { error ?
+              <>
+                <TouchableOpacity style={styles.backButtonImage} onPress={()=>{
+                  navigation.goBack()
+                }}>
+                  <Back />
+                </TouchableOpacity>
                 <View style={styles.errorContainer}>
-                  <View>
-                  <TouchableOpacity style={styles.buttonImage} onPress={()=>{
-                    navigation.goBack()
-                  }}>
-                    <Back />
-                  </TouchableOpacity>
-                  </View>
                   <Text style={styles.errorText}>Erro ao encontrar o invocador</Text>
                 </View>
+              </>
+               
                 :
+                <View style={{height: "100%", justifyContent: "center"}}>
                 <ActivityIndicator size="large" color="#CDBE91" />
+                </View>
               }
           </View>
         </View>   

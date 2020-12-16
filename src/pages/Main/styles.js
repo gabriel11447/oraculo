@@ -96,16 +96,14 @@ const styles = StyleSheet.create({
     marginLeft: 20,
   },
   errorContainer: {
-    flex: 1,
-    flexDirection: "column",
-    justifyContent: "space-between"
+    justifyContent: "center",
+    height: "100%",
   },
   errorText: {
     color: "#CDBE91",
     fontFamily: "Asul-Bold",
     fontSize: 24,
     textAlign: "center",
-    marginBottom: Dimensions.get("window").height / 2,
   },
   
   });

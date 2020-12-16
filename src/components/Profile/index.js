@@ -25,7 +25,7 @@ export default function Profile({ rank }) {
   }
 
   return (
-    <View>
+    <View style={styles.tabContainer}>
       <View style={styles.profileContainer}>
         <Text style={styles.rankTypeText}>SOLO / DUO</Text>
         <Text style={styles.rankTypeText}>FLEX 5x5</Text>
