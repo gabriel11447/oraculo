@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {
   View,
   TextInput,
@@ -6,12 +6,14 @@ import {
   StatusBar,
   Image,
   TouchableOpacity,
+  
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 import styles from "./styles";
 
 import Brand from "../../../assets/img/brand.svg";
+import SplashScreen from 'react-native-splash-screen';
 
 export default function Home() {
 
@@ -19,6 +21,10 @@ export default function Home() {
 
   let campoUser;
   let conteudocampoUser = "";
+
+  useEffect(()=>{
+    SplashScreen.hide();
+  },[])
 
     return (
         <>
