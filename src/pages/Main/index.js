@@ -101,26 +101,26 @@ export default function Main({userName}) {
               <Animated.View style={[styles.flagContainer, profileButton ? {opacity: 1} : {opacity: opacityValue}]}>
                 <Flag height={460} width={247} />
                 <FlagTrim
-                  rank={user.invocador.rank}
+                  rank={user.summoner.rank}
                 />
               </Animated.View>
 
               <View style={styles.flag}>
                 <Text style={styles.summonerName}>
-                  {user.invocador.name}
+                  {user.summoner.name}
                 </Text>
                 <Animated.View style={[styles.iconContainer, !profileButton && {marginTop: marginTopValue}]}>
                   <ImageBackground
                     style={styles.summonerIcon}
                     imageStyle={{ borderRadius: 50 }}
-                    source={{uri: `https://api-lol-pecege.herokuapp.com/datadragon/iconePerfil/${user.invocador.profileIconId}`}}
+                    source={{uri: `https://api-lol-pecege.herokuapp.com/datadragon/iconePerfil/${user.summoner.profileIconId}`}}
                   >
                     <Image
                       style={styles.iconBorder}
                       source={{uri: "https://static.wikia.nocookie.net/leagueoflegends/images/d/d7/Level_75_Summoner_Icon_Border.png/revision/latest?cb=20180324105840"}}
                     />
                     <Text style={styles.summonerLevel}>
-                      {user.invocador.summonerLevel}
+                      {user.summoner.summonerLevel}
                     </Text>
                   </ImageBackground>
                 </Animated.View>                             
@@ -147,11 +147,11 @@ export default function Main({userName}) {
                 <>
                 {animatedValue.setValue(0)}
                 <Profile 
-                  rank={user.invocador.rank}
+                  rank={user.summoner.rank}
                 />  
                 </> :
                 <History 
-                  matches={user.partidas}
+                  matches={user.matches}
                   winRate={user.winRate}
                   onScroll={Animated.event(
                     [{ nativeEvent: {
