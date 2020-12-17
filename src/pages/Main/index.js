@@ -64,7 +64,7 @@ export default function Main({userName}) {
   useEffect(() => {
     const searchUser = async () => {
       try {
-        const urlUser = 'https://api-lol-pecege.herokuapp.com/invocador/' + userName;
+        const urlUser = 'https://api-lol-pecege.herokuapp.com/summoner/' + userName;
         const userResponse = await axios.get(urlUser)
         setUser(userResponse.data)
         setLoading(false)
@@ -113,7 +113,7 @@ export default function Main({userName}) {
                   <ImageBackground
                     style={styles.summonerIcon}
                     imageStyle={{ borderRadius: 50 }}
-                    source={{uri: `https://api-lol-pecege.herokuapp.com/datadragon/iconePerfil/${user.summoner.profileIconId}`}}
+                    source={{uri: `https://api-lol-pecege.herokuapp.com/datadragon/iconProfile/${user.summoner.profileIconId}`}}
                   >
                     <Image
                       style={styles.iconBorder}
