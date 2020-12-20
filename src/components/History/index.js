@@ -28,10 +28,10 @@ export default function History({ onScroll, matches, winRate }) {
                 renderItem={({ item }) => (
                     <CardHistory
                         queueName = {item.queue}
-                        championImage={item.champion.imagem.splashMobile} 
-                        matchTime={item.dados.duration} 
-                        win={item.dados.win}
-                        kda={item.dados.kda}
+                        championImage={item.champion.image.splashMobile} 
+                        matchTime={item.data.duration} 
+                        win={item.data.win}
+                        kda={item.data.kda}
                     />
                 )}
             />
