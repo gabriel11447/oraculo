@@ -86,7 +86,7 @@ const styles = StyleSheet.create({
   },
   menuTab: {
     height: Dimensions.get("screen").height,
-    marginTop: (Dimensions.get("screen").height / 4) * 0.10,
+    marginTop: (Dimensions.get("screen").height / 4) * 0.03
   },
   backButtonImage: {
     color: "#CDBE91",

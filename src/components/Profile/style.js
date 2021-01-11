@@ -1,8 +1,10 @@
 import { StyleSheet } from "react-native";
 
+
+
 const styles = StyleSheet.create({
   tabContainer: {
-    height: "25%", 
+    height: "27%", 
     justifyContent: "space-around",
   },
   rankTypeText: {
