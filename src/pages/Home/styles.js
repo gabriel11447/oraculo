@@ -10,7 +10,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "center",
     marginHorizontal: 20,
-    alignItems:"center",
+    alignItems: "center",
   },
   contentContainer: {
     flex: 1,
@@ -32,15 +32,15 @@ const styles = StyleSheet.create({
     opacity: 0.6,
     position: "absolute",
     resizeMode: "cover",
-    height: '100%',
-    width: '100%',
+    height: "100%",
+    width: "100%",
   },
   inputBorder: {
-    borderBottomWidth:3,
+    borderBottomWidth: 3,
     borderColor: "#CDBE91",
   },
   input: {
-    fontFamily:"Asul-Regular",
+    fontFamily: "Asul-Regular",
     flex: 1,
     color: "white",
     fontSize: 20,
@@ -62,17 +62,17 @@ const styles = StyleSheet.create({
     fontSize: 34,
     textAlign: "center",
   },
- searchIcon:{
-   zIndex:1
- },
- copyRight:{
+  searchIcon: {
+    zIndex: 1,
+  },
+  copyRight: {
     alignSelf: "center",
     bottom: 10,
     textTransform: "uppercase",
     color: "#fff",
-    position:"absolute",
-    fontWeight:"bold"
-  }
+    position: "absolute",
+    fontWeight: "bold",
+  },
 });
-  
+
 export default styles;

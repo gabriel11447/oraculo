@@ -1,10 +1,8 @@
 import { StyleSheet } from "react-native";
 
-
-
 const styles = StyleSheet.create({
   tabContainer: {
-    height: "27%", 
+    height: "27%",
     justifyContent: "space-around",
   },
   rankTypeText: {
@@ -15,20 +13,20 @@ const styles = StyleSheet.create({
     width: 130,
   },
   profileContainer: {
-    flexDirection:"row",
+    flexDirection: "row",
     justifyContent: "space-evenly",
   },
   rankText: {
-  color: "#fff",
+    color: "#fff",
     fontFamily: "Asul-Regular",
     fontSize: 14,
     textAlign: "center",
     width: 115,
   },
   rankImage: {
-    flexDirection: "row", 
+    flexDirection: "row",
     justifyContent: "space-evenly",
-  }
-})
+  },
+});
 
 export default styles;

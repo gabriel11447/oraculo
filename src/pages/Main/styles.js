@@ -2,7 +2,7 @@ import { StyleSheet, Dimensions } from "react-native";
 
 const styles = StyleSheet.create({
   pageContainer: {
-    flex:1,
+    flex: 1,
     backgroundColor: "#1F2229",
   },
   container: {
@@ -19,8 +19,8 @@ const styles = StyleSheet.create({
     opacity: 0.6,
     position: "absolute",
     resizeMode: "cover",
-    height: '100%',
-    width: '100%',
+    height: "100%",
+    width: "100%",
   },
   flagContainer: {
     position: "absolute",
@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
   },
   summonerName: {
     color: "#CDBE91",
-    fontFamily:"Asul-Bold",
+    fontFamily: "Asul-Bold",
     fontSize: 22,
     textAlign: "center",
     marginTop: 28,
@@ -63,12 +63,12 @@ const styles = StyleSheet.create({
     position: "absolute",
     top: 84,
   },
-  perfilContainer:{
-    flexDirection:"row",
+  perfilContainer: {
+    flexDirection: "row",
     padding: 10,
-    justifyContent:"space-evenly"
+    justifyContent: "space-evenly",
   },
-  menuText:{
+  menuText: {
     color: "#CDBE91",
     width: 120,
     fontFamily: "Asul-Bold",
@@ -86,7 +86,7 @@ const styles = StyleSheet.create({
   },
   menuTab: {
     height: Dimensions.get("screen").height,
-    marginTop: (Dimensions.get("screen").height / 4) * 0.03
+    marginTop: (Dimensions.get("screen").height / 4) * 0.03,
   },
   backButtonImage: {
     color: "#CDBE91",
@@ -105,7 +105,6 @@ const styles = StyleSheet.create({
     fontSize: 24,
     textAlign: "center",
   },
-  
-  });
-  
+});
+
 export default styles;
