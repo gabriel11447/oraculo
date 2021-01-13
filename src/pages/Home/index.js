@@ -62,7 +62,7 @@ export default function Home() {
 
         <View style={{ flex: 1 }}>
           <Text style={styles.copyRight}>
-            Copyright © 2020 MUTRICA DOGS S.A.
+            Powered by Felipe Bis e Gabriel de Carvalho
           </Text>
         </View>
       </View>

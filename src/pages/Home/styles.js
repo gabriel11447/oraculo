@@ -68,7 +68,6 @@ const styles = StyleSheet.create({
   copyRight: {
     alignSelf: "center",
     bottom: 10,
-    textTransform: "uppercase",
     color: "#fff",
     position: "absolute",
     fontWeight: "bold",
