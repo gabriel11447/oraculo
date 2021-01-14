@@ -9,6 +9,7 @@ import {
   ImageBackground,
   TouchableOpacity,
   Animated,
+  Dimensions,
   ActivityIndicator,
 } from "react-native";
 import styles from "./styles";
@@ -18,6 +19,10 @@ import Back from "../../../assets/img/back.svg";
 import Flag from "../../../assets/img/flag.svg";
 
 import FlagTrim from "../../components/FlagTrim/index";
+
+const HighValue = Dimensions.get("window").width > 360 ? 400 : 350;
+const LowValue = Dimensions.get("window").width > 360 ? 200 : 240;
+const LowMarginValue = Dimensions.get("window").width > 360 ? 40 : 60;
 
 export default function Main({ userName }) {
   const [profileButton, setProfileButton] = useState(true);
@@ -38,20 +43,20 @@ export default function Main({ userName }) {
   const navigation = useNavigation();
 
   const headerHeight = animatedValue.interpolate({
-    inputRange: [0, 800 - 480],
-    outputRange: [400, 200],
+    inputRange: [0, HighValue * 2 - 480],
+    outputRange: [HighValue, LowValue],
     extrapolate: "clamp",
   });
 
   const opacityValue = animatedValue.interpolate({
-    inputRange: [0, 800 - 560],
+    inputRange: [0, HighValue * 2 - 560],
     outputRange: [1, 0],
     extrapolate: "clamp",
   });
 
   const marginTopValue = animatedValue.interpolate({
-    inputRange: [0, 800 - 560],
-    outputRange: [90, 40],
+    inputRange: [0, HighValue * 2 - 560],
+    outputRange: [90, LowMarginValue],
     extrapolate: "clamp",
   });
 
@@ -94,13 +99,18 @@ export default function Main({ userName }) {
         </View>
 
         <Animated.View
-          style={profileButton ? { height: 400 } : { height: headerHeight }}>
+          style={
+            profileButton ? { height: HighValue } : { height: headerHeight }
+          }>
           <Animated.View
             style={[
               styles.flagContainer,
               profileButton ? { opacity: 1 } : { opacity: opacityValue },
             ]}>
-            <Flag height={460} width={247} />
+            <Flag
+              height={Dimensions.get("window").width > 360 ? 460 : 430}
+              width={Dimensions.get("window").width > 360 ? 247 : 231}
+            />
             <FlagTrim rank={user.summoner.rank} />
           </Animated.View>
 

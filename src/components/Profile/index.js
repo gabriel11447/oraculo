@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, Image, View } from "react-native";
+import { Text, Image, View, Dimensions } from "react-native";
 
 import styles from "./style.js";
 
@@ -28,7 +28,12 @@ export default function Profile({ rank }) {
   }
 
   return (
-    <View style={styles.tabContainer}>
+    <View
+      style={
+        Dimensions.get("window").width > 360
+          ? styles.tabContainer
+          : styles.lowTabContainer
+      }>
       <View style={styles.profileContainer}>
         <Text style={styles.rankTypeText}>SOLO / DUO</Text>
         <Text style={styles.rankTypeText}>FLEX 5x5</Text>
