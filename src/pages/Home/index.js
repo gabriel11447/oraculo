@@ -62,7 +62,7 @@ export default function Home() {
 
         <View style={{ flex: 1 }}>
           <Text style={styles.copyRight}>
-            Powered by Felipe Bis e Gabriel de Carvalho
+            Powered by Felipe Bis and Gabriel de Carvalho
           </Text>
         </View>
       </View>
