@@ -27,16 +27,20 @@ const LowMarginValue = Dimensions.get("window").width > 360 ? 40 : 60;
 export default function Main({ userName }) {
   const [profileButton, setProfileButton] = useState(true);
   const [matchButton, setMatchButton] = useState(false);
-  const [animatedValue, setAnimatedValue] = useState(new Animated.Value(0));
+  const [animatedValue] = useState(new Animated.Value(0));
 
   function handleProfileButton() {
-    if (profileButton) return;
+    if (profileButton) {
+      return;
+    }
     setMatchButton(!matchButton);
     setProfileButton(!profileButton);
   }
 
   function handleMatchButton() {
-    if (matchButton) return;
+    if (matchButton) {
+      return;
+    }
     setProfileButton(!profileButton);
     setMatchButton(!matchButton);
   }

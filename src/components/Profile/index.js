@@ -6,8 +6,8 @@ import styles from "./style.js";
 export default function Profile({ rank }) {
   let rankUrl = "https://api-lol-pecege.herokuapp.com";
 
-  let flexRank = rank.find((type) => type.queueType == "RANKED_FLEX_SR");
-  let soloRank = rank.find((type) => type.queueType == "RANKED_SOLO_5x5");
+  let flexRank = rank.find((type) => type.queueType === "RANKED_FLEX_SR");
+  let soloRank = rank.find((type) => type.queueType === "RANKED_SOLO_5x5");
 
   {
     !flexRank
