@@ -1,4 +1,4 @@
-package com.oraculo;
+package com.oraculolol;
 
 import org.devio.rn.splashscreen.SplashScreen;
 import android.os.Bundle;

@@ -1,4 +1,4 @@
-package com.oraculo;
+package com.oraculolol;
 
 import android.content.Intent;
 import android.os.Bundle;
